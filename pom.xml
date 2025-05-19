@@ -44,6 +44,13 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- INNER SOURCE -->
+    <dependency>
+        <groupId>dev.sonatype.test</groupId>
+        <artifactId>iq-sample-vulnerable-dependency</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </dependency>
+
     <!-- DEPENDENCIES WITH VULNERABILITIES -->
     <dependency>
         <groupId>com.google.guava</groupId>
