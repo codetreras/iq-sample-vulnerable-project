@@ -16,7 +16,8 @@
     <maven.compiler.release>17</maven.compiler.release>
     <java.version>17</java.version>
     <spring.boot.version>2.6.3</spring.boot.version>
-    <thymeleaf.version>3.0.11.RELEASE</thymeleaf.version>
+    <thymeleaf.version>3.0.10.RELEASE</thymeleaf.version>
+    <clm.skip>true</clm.skip>
   </properties>
 
   <dependencyManagement>
@@ -122,6 +123,21 @@
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
+        <plugin>
+          <groupId>com.sonatype.clm</groupId>
+          <artifactId>clm-maven-plugin</artifactId>
+          <configuration>
+            <skip>${clm.skip}</skip>
+          </configuration>
+          <executions>
+            <execution>
+              <id>clm-index</id>
+              <goals>
+                <goal>index</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
